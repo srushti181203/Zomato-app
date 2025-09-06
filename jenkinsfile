@@ -58,7 +58,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker') {
-                        sh "docker tag zomato kastrov/zomato:latest "
+                        sh "docker tag zomato srushtihv123/zomato:latest "
                         sh "docker push kastrov/zomato:latest "
                     }
                 }
