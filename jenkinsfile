@@ -15,7 +15,7 @@ pipeline {
         }
         stage ("Git Checkout") {
             steps {
-                git 'https://github.com/KastroVKiran/Zomato-Project-Kastro.git'
+                git changelog: false, poll: false, url: 'https://github.com/srushti181203/Zomato-app.git'
             }
         }
         stage("Sonarqube Analysis"){
