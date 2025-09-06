@@ -59,7 +59,7 @@ pipeline {
                 script {
                     withDockerRegistry(credentialsId: 'docker') {
                         sh "docker tag zomato srushtihv123/zomato:latest "
-                        sh "docker push kastrov/zomato:latest "
+                        sh "docker push srushtihv123/zomato:latest "
                     }
                 }
             }
@@ -68,9 +68,9 @@ pipeline {
             steps {
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){
-                       sh 'docker-scout quickview kastrov/zomato:latest'
-                       sh 'docker-scout cves kastrov/zomato:latest'
-                       sh 'docker-scout recommendations kastrov/zomato:latest'
+                       sh 'docker-scout quickview srushtihv123/zomato:latest'
+                       sh 'docker-scout cves srushtihv123/zomato:latest'
+                       sh 'docker-scout recommendations srushtihv123/zomato:latest'
                    }
                 }
             }
@@ -100,7 +100,7 @@ pipeline {
                 </body>
                 </html>
             """,
-            to: 'kastrokiran@gmail.com',
+            to: 'srushti181203@gmail.com',
             mimeType: 'text/html',
             attachmentsPattern: 'trivy.txt'
         }
